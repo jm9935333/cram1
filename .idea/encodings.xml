@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/f/MainActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/f/PersonalRegister.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/data_item.xml" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/main.xml" charset="x-windows-950" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
