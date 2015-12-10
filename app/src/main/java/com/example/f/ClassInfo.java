@@ -55,6 +55,7 @@ public class ClassInfo extends Fragment {
 		spnLesson.setOnItemSelectedListener(spnLessonListener);
 		spnGrade.setOnItemSelectedListener(spnGradeListener);
 
+
 		btn.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -62,6 +63,8 @@ public class ClassInfo extends Fragment {
 
 			}
 		});
+
+		return v;}
 
 		Spinner.OnItemSelectedListener spnGradeListener = new Spinner.OnItemSelectedListener() {
 
@@ -81,6 +84,7 @@ public class ClassInfo extends Fragment {
 
 			}
 		};
+
 		Spinner.OnItemSelectedListener spnLessonListener = new Spinner.OnItemSelectedListener() {
 
 			@Override
@@ -100,7 +104,8 @@ public class ClassInfo extends Fragment {
 			}
 		};
 
-	}
+
 }
+
 
 

@@ -151,8 +151,8 @@ public class MainActivity extends FragmentActivity {
                 // TODO Auto-generated method stub
                 FragmentTransaction transaction = getSupportFragmentManager()
                         .beginTransaction();
-                PersonalRegister PersonalRegister = new PersonalRegister();
-                transaction.replace(R.id.fragment_container, PersonalRegister);
+                Personal Personal = new Personal();
+                transaction.replace(R.id.fragment_container, Personal);
                 transaction.addToBackStack(null);
                 transaction.commitAllowingStateLoss();
             }
@@ -188,10 +188,10 @@ public class MainActivity extends FragmentActivity {
 
         if (sp.getBoolean("isLogin", false) == true) {
             // 已經登入
-            Personal.setText("�ǥ͸�T");
+            Personal.setText("學生資訊");
         } else {
             // �٨S�n�J
-            Personal.setText("�n�J/��U");
+            Personal.setText("登入/註冊");
         }
 
         for (int i = 0; i < myTextView.length; i++) {
@@ -204,6 +204,18 @@ public class MainActivity extends FragmentActivity {
         // 偵測手機的返回鍵
         getSupportFragmentManager().popBackStack();
 
+    }
+
+    private Cursor getCursor(){
+        DBHelper dbhelper = null;
+        SQLiteDatabase db = dbhelper.getReadableDatabase();
+        String[] columns = {_ID, NAME, TEL, EMAIL};
+
+        Cursor cursor = db.query(TABLE_NAME , columns, null, null, null, null, null);
+        //        Cursor cursor = db.rawQuery("SELECT * FROM "+ TABLE_NAME + " WHERE _ID = 5 ", null);
+        startManagingCursor(cursor);
+        Log.v("cursor", "" + cursor);
+        return cursor;
     }
 }
 
@@ -381,17 +393,8 @@ public class MainActivity extends FragmentActivity {
 //    }
 //
 
-//    private Cursor getCursor(){
-//        SQLiteDatabase db = dbhelper.getReadableDatabase();
-//        String[] columns = {_ID, NAME, TEL, EMAIL};
-//
-//        Cursor cursor = db.query(TABLE_NAME , columns, null, null, null, null, null);
-////        Cursor cursor = db.rawQuery("SELECT * FROM "+ TABLE_NAME + " WHERE _ID = 5 ", null);
-//        startManagingCursor(cursor);
-//        Log.v("cursor", "" + cursor);
-//        return cursor;
-//    }
-//
+
+
 //    private void show(){
 //
 //        Cursor cursor = getCursor();
